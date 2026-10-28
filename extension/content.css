@@ -1,0 +1,7 @@
+.web-highlighter-extension-mark {
+    color: inherit !important;
+    background-color: #ffe58a !important;
+    border-radius: 2px !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+}

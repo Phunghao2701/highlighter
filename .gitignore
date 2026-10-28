@@ -7,7 +7,6 @@ docs/TODO.md
 typings
 .nyc_output
 coverage
-test/
 docs/
 .husky/
 .cursor/

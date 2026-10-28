@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Highlighter",
+    "version": "0.1.9",
+    "description": "Highlight selected text and create self-contained share links.",
+    "permissions": ["activeTab", "scripting", "clipboardWrite", "contextMenus"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Highlighter",
+        "default_popup": "popup.html"
+    }
+}

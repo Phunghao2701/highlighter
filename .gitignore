@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+example/static
+example/index.html
+dist
+docs/TODO.md
+typings
+.nyc_output
+coverage

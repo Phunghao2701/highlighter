@@ -1,0 +1,31 @@
+// cSpell:ignore devtool
+/**
+ * config for production (lib bundle)
+ */
+const webpack = require('webpack');
+const { distPath } = require('./paths.js');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { merge } = require('webpack-merge');
+const baseConfig = require('./base.config');
+const pkg = require('../package.json');
+const name = pkg.name;
+const version = pkg.version;
+const repository = pkg.repository.url;
+const bannerInfo = `${name} v${version} ${repository}`;
+
+const config = {
+    mode: 'production',
+    devtool: 'source-map',
+    output: {
+        filename: 'web-highlighter.min.js'
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new webpack.DefinePlugin({
+            __WEB_HIGHLIGHTER_VERSION__: JSON.stringify(version)
+        }),
+        new webpack.BannerPlugin(bannerInfo)
+    ]
+};
+
+module.exports = merge(baseConfig, config);

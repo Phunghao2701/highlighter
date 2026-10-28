@@ -1,45 +1,57 @@
-<h1 align="center">Highlighter</h1>
-<p align="center">A Chrome and Edge extension for highlighting and sharing passages from any webpage.</p>
+<div>
+    <h1 align="center"><code>Highlighter</code>&nbsp;&nbsp;🖍️</h1>
+    <p align="center">
+        <strong>✨ A dependency-free library for highlighting and persisting text on any website ✨🖍️</strong>
+    </p>
+   
+</div>
 
-## Features
+---
 
-- Highlight selected text from the right-click menu.
-- Add multiple highlights to the same page.
-- Share all highlights with one click. The link is copied to the clipboard and a brief confirmation appears.
-- Recipients can open a shared link in Chrome or Edge without installing the extension.
+## Development
 
-## Install for local testing
+This project uses Node.js `22.15.1` and publishes ES5 output with IE11 support. With [nvm](https://github.com/nvm-sh/nvm) installed, run:
 
-Requirements: Node.js 22.15.1 and npm.
-
-From the repository root, build the extension:
-
-~~~bash
+```bash
+nvm use
 npm ci
+npm test
+```
+
+### Try the Chrome/Edge extension
+
+Build the unpacked extension:
+
+```bash
 npm run build:extension
-~~~
+```
 
-Then load it in Chrome or Edge:
+In Chrome, open `chrome://extensions`; in Edge, open `edge://extensions`. Turn on **Developer mode**, choose **Load unpacked**, and select the repository's `dist/extension` folder. After rebuilding an already loaded extension, click its **Reload** button and refresh the webpage. On a regular webpage, select a passage, right-click it, and choose **Highlight selection**. Repeat for each passage, then click the Highlighter toolbar button and **Share all highlights**. The link is copied to the clipboard and a brief toast confirms it. Recipients can open the link in Chrome or Edge to see every passage highlighted; they do not need to install the extension.
 
-1. Open chrome://extensions or edge://extensions.
-2. Turn on **Developer mode**.
-3. Select **Load unpacked** and choose dist/extension.
+The extension requests access to the active tab only after you click its toolbar button. Shared links contain short start/end text ranges and surrounding quote context in Chromium text-fragment directives, so they can highlight passages that span inline elements without a share server or recipient extension. The destination page must contain the selected text; pages that block text fragments or change URL fragments may not show the highlights.
 
-## Use
 
-1. Select text on a webpage, right-click, and choose **Highlight selection**.
-2. Repeat for each passage you want to share.
-3. Select the Highlighter toolbar button and click **Share all highlights**.
-4. Send the copied link. Recipients can open it without the extension.
+## Compatibility
 
-The page must still contain the selected text. A site that changes or blocks URL text fragments may not show the highlights.
+> It depends on [Selection API](https://caniuse.com/#search=selection%20api).
 
-## Package and install a CRX
+- IE 11
+- Edge
+- Firefox 52+
+- Chrome 15+
+- Safari 5.1+
+- Opera 15+
 
-To create a single-file package, open the browser's extensions page, turn on **Developer mode**, select **Pack extension**, and choose dist/extension. The browser creates a CRX package and a PEM key. Keep the PEM private and safe; use the same key when creating future updates. Share only the CRX file.
+_**Mobile support:**_ Mobile devices are detected automatically and use touch events instead of mouse events.
 
-To install a CRX in Edge, open edge://extensions, turn on **Developer mode**, and drag the CRX file onto the page. Browser or organization policy may restrict manual CRX installation; **Load unpacked** is available for local testing.
+### Runtime environment
+
+Highlighter requires browser DOM APIs, including `document`, `Range`, and `Selection`. It supports browsers and WebViews that provide these APIs. Native mini-program renderers and non-DOM native application views are not supported.
+
+## Advanced usage
+
+For more ways to customize highlighting behavior, read the [advanced guide](https://github.com/alienzhou/web-highlighter/blob/master/docs/ADVANCE.md).
 
 ## License
 
-[MIT](LICENSE)
+[MIT](./LICENSE)

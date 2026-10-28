@@ -1,10 +1,10 @@
 {
-  "name": "web-highlighter",
+  "name": "@phunghao2701/highlighter",
   "version": "0.8.0",
   "description": "A dependency-free library for highlighting and persisting text on any website ✨🖍️",
-  "main": "dist/web-highlighter.min.js",
+  "main": "dist/highlighter.min.js",
   "types": "dist/index.d.ts",
-  "browser": "dist/web-highlighter.min.js",
+  "browser": "dist/highlighter.min.js",
   "files": [
     "dist"
   ],
@@ -51,10 +51,10 @@
       "eslint --fix"
     ]
   },
-  "homepage": "https://alienzhou.github.io/web-highlighter",
+  "homepage": "https://github.com/Phunghao2701/highlighter",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alienzhou/web-highlighter"
+    "url": "https://github.com/Phunghao2701/highlighter.git"
   },
   "keywords": [
     "text",

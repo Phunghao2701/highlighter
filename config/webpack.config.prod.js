@@ -17,12 +17,12 @@ const config = {
     mode: 'production',
     devtool: 'source-map',
     output: {
-        filename: 'web-highlighter.min.js'
+        filename: 'highlighter.min.js'
     },
     plugins: [
         new CleanWebpackPlugin(),
         new webpack.DefinePlugin({
-            __WEB_HIGHLIGHTER_VERSION__: JSON.stringify(version)
+            __HIGHLIGHTER_VERSION__: JSON.stringify(version)
         }),
         new webpack.BannerPlugin(bannerInfo)
     ]

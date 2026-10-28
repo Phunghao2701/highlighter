@@ -7,7 +7,7 @@ describe('Distribution bundle', function () {
     this.timeout(50000);
 
     it('stops before an excluded end node', () => {
-        const bundle = readFileSync(resolve(__dirname, '..', 'dist', 'web-highlighter.min.js'), 'utf-8');
+        const bundle = readFileSync(resolve(__dirname, '..', 'dist', 'highlighter.min.js'), 'utf-8');
         const dom = new JSDOM(
             '<main><p>before <span class="excluded">excluded</span> after</p><p>unrelated</p></main>',
             {
@@ -42,7 +42,7 @@ describe('Distribution bundle', function () {
     });
 
     it('ignores image-only ranges', () => {
-        const bundle = readFileSync(resolve(__dirname, '..', 'dist', 'web-highlighter.min.js'), 'utf-8');
+        const bundle = readFileSync(resolve(__dirname, '..', 'dist', 'highlighter.min.js'), 'utf-8');
         const dom = new JSDOM('<main><img></main>', {
             runScripts: 'dangerously',
         });
@@ -74,7 +74,7 @@ describe('Distribution bundle', function () {
     });
 
     it('exposes the UMD global and supports the highlight lifecycle', () => {
-        const bundle = readFileSync(resolve(__dirname, '..', 'dist', 'web-highlighter.min.js'), 'utf-8');
+        const bundle = readFileSync(resolve(__dirname, '..', 'dist', 'highlighter.min.js'), 'utf-8');
         const dom = new JSDOM('<main><p>Highlight this text.</p></main>', {
             runScripts: 'dangerously',
         });

@@ -8,7 +8,6 @@ typings
 .nyc_output
 coverage
 test/
-script/
 docs/
 .husky/
 .cursor/

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Highlighter icon</title>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="#19442F"/>
+  <path d="M40 22h36l18 18v63a7 7 0 0 1-7 7H41a7 7 0 0 1-7-7V29a7 7 0 0 1 6-7Z" fill="#FBFAF6"/>
+  <path d="M76 22v13a5 5 0 0 0 5 5h13" fill="#E8E5DA"/>
+  <path d="M48 53h29M48 72h34M48 91h29" fill="none" stroke="#19442F" stroke-linecap="round" stroke-width="8"/>
+  <path d="M48 72h34" fill="none" stroke="#F3D84A" stroke-linecap="round" stroke-width="10"/>
+</svg>

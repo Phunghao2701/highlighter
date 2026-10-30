@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Highlighter monochrome mark</title>
+  <path d="M40 15h37l21 21v66a10 10 0 0 1-10 10H40a10 10 0 0 1-10-10V25a10 10 0 0 1 10-10Zm37 4v13a5 5 0 0 0 5 5h13" fill="#19442F" fill-rule="evenodd"/>
+  <path d="M48 51h32M48 70h36M48 89h32" fill="none" stroke="#19442F" stroke-linecap="round" stroke-width="8"/>
+</svg>

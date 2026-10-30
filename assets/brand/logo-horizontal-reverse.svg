@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 128" role="img" aria-labelledby="title">
+  <title id="title">Highlighter</title>
+  <g transform="translate(4 4)">
+    <rect x="0" y="0" width="120" height="120" rx="27" fill="#19442F"/>
+    <path d="M36 18h36l18 18v63a7 7 0 0 1-7 7H37a7 7 0 0 1-7-7V25a7 7 0 0 1 6-7Z" fill="#FBFAF6"/>
+    <path d="M72 18v13a5 5 0 0 0 5 5h13" fill="#E8E5DA"/>
+    <path d="M44 49h29M44 68h34M44 87h29" fill="none" stroke="#19442F" stroke-linecap="round" stroke-width="8"/>
+    <path d="M44 68h34" fill="none" stroke="#F3D84A" stroke-linecap="round" stroke-width="10"/>
+  </g>
+  <text x="151" y="84" fill="#FBFAF6" font-family="Aptos, 'Segoe UI', Arial, sans-serif" font-size="63" font-weight="750" letter-spacing="-2.5">Highlighter</text>
+</svg>

@@ -3,7 +3,8 @@ name: Release extension
 on:
   push:
     tags:
-      - 'extension-v*'
+      - highlighter
+      - 'highlighter-v*'
 
 permissions:
   contents: write
@@ -28,14 +29,15 @@ jobs:
         id: version
         shell: bash
         run: |
-          if [[ "$GITHUB_REF_NAME" =~ ^extension-v([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+          manifest_version="$(node -p "require('./extension/manifest.json').version")"
+          if [[ "$GITHUB_REF_NAME" == "highlighter" ]]; then
+            tag_version="$manifest_version"
+          elif [[ "$GITHUB_REF_NAME" =~ ^highlighter-v([0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
             tag_version="${BASH_REMATCH[1]}"
           else
-            echo "Tag must use the format extension-vX.Y.Z." >&2
+            echo "Tag must be highlighter or use the format highlighter-vX.Y.Z." >&2
             exit 1
           fi
-
-          manifest_version="$(node -p "require('./extension/manifest.json').version")"
           if [[ "$tag_version" != "$manifest_version" ]]; then
             echo "Tag version $tag_version does not match extension/manifest.json ($manifest_version)." >&2
             exit 1

@@ -76,12 +76,13 @@ jobs:
             "$GITHUB_WORKSPACE/release/Highlighter-Extension-${VERSION}.crx"
           rm -f "$key_path"
 
-      - name: Create checksums
+      - name: Create concise release notes
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
-          cd release
-          find . -maxdepth 1 -type f \( -name '*.zip' -o -name '*.crx' \) -print0 \
-            | sort -z \
-            | xargs -0 sha256sum > SHA256SUMS.txt
+          cat > "$RUNNER_TEMP/release-notes.md" <<EOF
+          Download the Highlighter-Extension-${VERSION}.zip asset below. Extract it, then choose Load unpacked in chrome://extensions (Chrome) or edge://extensions (Edge) and select the folder containing manifest.json.
+          EOF
 
       - name: Publish GitHub Release
         env:
@@ -91,5 +92,5 @@ jobs:
           gh release create "$GITHUB_REF_NAME" release/*
           --verify-tag
           --title "Highlighter Extension v${VERSION}"
-          --generate-notes
+          --notes-file "$RUNNER_TEMP/release-notes.md"
           --latest

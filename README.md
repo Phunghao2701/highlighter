@@ -39,7 +39,7 @@ The extension requests access to the active tab only after you click its toolbar
 
 ### Publish a new extension release
 
-For the first release, set the desired version in `extension/manifest.json`, commit the change, then push the `highlighter` tag. GitHub Actions builds the extension, creates a ZIP package and checksum file, optionally signs a CRX, and publishes a GitHub Release:
+For the first release, set the desired version in `extension/manifest.json`, commit the change, then push the `highlighter` tag. GitHub Actions builds the extension, creates a ZIP package, optionally signs a CRX, and publishes a GitHub Release:
 
 ```bash
 git tag highlighter

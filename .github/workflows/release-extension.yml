@@ -52,7 +52,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           mkdir -p release
-          (cd dist/extension && zip -qr "$GITHUB_WORKSPACE/release/Highlighter-Extension-${VERSION}.zip" .)
+          (cd dist/extension && zip -qr "$GITHUB_WORKSPACE/release/Highlighter-${VERSION}.zip" .)
 
       - name: Create signed CRX package (optional)
         env:
@@ -72,7 +72,7 @@ jobs:
             --pack-extension="$GITHUB_WORKSPACE/dist/extension" \
             --pack-extension-key="$key_path"
           mv "$GITHUB_WORKSPACE/dist/extension.crx" \
-            "$GITHUB_WORKSPACE/release/Highlighter-Extension-${VERSION}.crx"
+            "$GITHUB_WORKSPACE/release/Highlighter-${VERSION}.crx"
           rm -f "$key_path"
 
       - name: Create concise release notes

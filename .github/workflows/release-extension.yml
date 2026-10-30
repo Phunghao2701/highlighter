@@ -3,7 +3,6 @@ name: Release extension
 on:
   push:
     tags:
-      - highlighter
       - 'v*'
 
 permissions:
@@ -91,6 +90,6 @@ jobs:
         run: >-
           gh release create "$GITHUB_REF_NAME" release/*
           --verify-tag
-          --title "Highlighter Extension v${VERSION}"
+          --title "Highlighter v${VERSION}"
           --notes-file "$RUNNER_TEMP/release-notes.md"
           --latest

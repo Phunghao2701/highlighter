@@ -80,7 +80,7 @@ jobs:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
           cat > "$RUNNER_TEMP/release-notes.md" <<EOF
-          Download the Highlighter-Extension-${VERSION}.zip asset below. Extract it, then choose Load unpacked in chrome://extensions (Chrome) or edge://extensions (Edge) and select the folder containing manifest.json.
+          Download the Highlighter-${VERSION}.zip asset below. Extract it, then choose Load unpacked in chrome://extensions (Chrome) or edge://extensions (Edge) and select the folder containing manifest.json.
           EOF
 
       - name: Publish GitHub Release

@@ -39,14 +39,14 @@ The extension requests access to the active tab only after you click its toolbar
 
 ### Publish a new extension release
 
-For the first release, set the desired version in `extension/manifest.json`, commit the change, then push the `highlighter` tag. GitHub Actions builds the extension, creates a ZIP package, optionally signs a CRX, and publishes a GitHub Release:
+Set the desired version in `extension/manifest.json`, commit the change, then push a matching version tag. For example, if the manifest version is `0.1.11`:
 
 ```bash
-git tag highlighter
-git push origin highlighter
+git tag v0.1.11
+git push origin v0.1.11
 ```
 
-The first release uses the exact tag `highlighter`; later releases use `highlighter-vX.Y.Z`. Versioned tags must match the manifest version. To enable CRX packaging, add the existing private PEM key as the repository Actions secret `HIGHLIGHTER_CRX_PRIVATE_KEY_B64` (Settings > Secrets and variables > Actions). For example, with GitHub CLI installed and authenticated, run `[Convert]::ToBase64String([IO.File]::ReadAllBytes("Highlighter.pem")) | gh secret set HIGHLIGHTER_CRX_PRIVATE_KEY_B64` in PowerShell. Keep using the same key for later releases to preserve the extension ID; never commit or publish the PEM file.
+The initial release used the legacy tag `highlighter`; new releases use `vX.Y.Z`, which must match the manifest version. GitHub Actions builds the extension, creates a ZIP package, optionally signs a CRX, and publishes the release. To enable CRX packaging, add the existing private PEM key as the repository Actions secret `HIGHLIGHTER_CRX_PRIVATE_KEY_B64` (Settings > Secrets and variables > Actions). For example, with GitHub CLI installed and authenticated, run `[Convert]::ToBase64String([IO.File]::ReadAllBytes("Highlighter.pem")) | gh secret set HIGHLIGHTER_CRX_PRIVATE_KEY_B64` in PowerShell. Keep using the same key for later releases to preserve the extension ID; never commit or publish the PEM file.
 
 
 ## Compatibility

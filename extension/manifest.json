@@ -1,13 +1,23 @@
 {
     "manifest_version": 3,
     "name": "Highlighter",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "description": "Highlight selected text and create self-contained share links.",
+    "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
+    },
     "permissions": ["activeTab", "scripting", "clipboardWrite", "contextMenus"],
     "background": {
         "service_worker": "background.js"
     },
     "action": {
+        "default_icon": {
+            "16": "icons/icon-16.png",
+            "32": "icons/icon-32.png"
+        },
         "default_title": "Highlighter",
         "default_popup": "popup.html"
     }

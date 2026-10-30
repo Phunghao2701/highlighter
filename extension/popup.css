@@ -20,12 +20,21 @@ body {
     padding: 20px;
 }
 
-.popup__eyebrow {
-    margin: 0;
-    color: #60776b;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+.popup__brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #19442f;
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: 0.02em;
+}
+
+.popup__brand img {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
 }
 
 h1 {

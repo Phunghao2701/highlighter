@@ -18,5 +18,12 @@ webpack(config, (error, stats) => {
         fs.copyFileSync(path.resolve(extensionPath, file), path.resolve(extensionDistPath, file));
     });
 
+    const iconDistPath = path.resolve(extensionDistPath, 'icons');
+    fs.mkdirSync(iconDistPath, { recursive: true });
+    [16, 32, 48, 128].forEach(size => {
+        const icon = `icon-${size}.png`;
+        fs.copyFileSync(path.resolve(__dirname, '../assets/brand', icon), path.resolve(iconDistPath, icon));
+    });
+
     console.log(stats.toString({ colors: true }));
 });
